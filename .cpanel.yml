@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home3/nubeliquida/public_html/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp -R conctactform $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R fonts $DEPLOYPATH
+    - /bin/cp -R img $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
