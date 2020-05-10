@@ -3,8 +3,8 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home3/nubeliquida/public_html/
     - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp -R conctactform $DEPLOYPATH
-    - /bin/cp -R css $DEPLOYPATH
-    - /bin/cp -R fonts $DEPLOYPATH
-    - /bin/cp -R img $DEPLOYPATH
-    - /bin/cp -R js $DEPLOYPATH
+    - /bin/cp -R /home3/nubeliquida/repositories/nubeliquida/repo/nube/contactform $DEPLOYPATH
+    - /bin/cp -R /home3/nubeliquida/repositories/nubeliquida/repo/nube/css $DEPLOYPATH
+    - /bin/cp -R /home3/nubeliquida/repositories/nubeliquida/repo/nube/fonts $DEPLOYPATH
+    - /bin/cp -R /home3/nubeliquida/repositories/nubeliquida/repo/nube/img $DEPLOYPATH
+    - /bin/cp -R /home3/nubeliquida/repositories/nubeliquida/repo/nube/js $DEPLOYPATH
