@@ -202,8 +202,18 @@ table {
     font-weight:400;
     font-size:13px;
 }
+.news-validation {
+    color: red;
+    text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #FFF, 0 -1px 0 #fff;
+    text-align: left;
+    display:none;
+    margin: 0 0 20px 10%;
+    font-weight:400;
+    font-size:13px;
+}
 #sendmessage {
     color: green;
+    text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #FFF, 0 -1px 0 #fff;
     border:1px solid green;
     display:none;
     text-align:center;
@@ -213,6 +223,7 @@ table {
 }
 #errormessage {
     color: red;
+    text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #FFF, 0 -1px 0 #fff;
     display:none;
     border:1px solid red;
     text-align:center;
@@ -222,6 +233,29 @@ table {
 }
 #sendmessage.show, #errormessage.show, .show {
 	display:block;
+}
+#sendsubscription {
+    color: green;
+    text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #FFF, 0 -1px 0 #fff;
+    border:1px solid green;
+    display:none;
+    text-align:center;
+    padding:15px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+#errorsubscription {
+    color: red;
+    text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #FFF, 0 -1px 0 #fff;
+    display:none;
+    border:1px solid red;
+    text-align:center;
+    padding:15px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+#sendsubscription.show, #errorsubscription.show, .show {
+    display:block;
 }
 footer {
     padding: 30px;

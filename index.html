@@ -34,9 +34,12 @@
                 <div id="countdown" data-wow-delay=".3s" data-date="Jul 01, 2020 12:00:00"></div>
                 <h2 class="text-center"><label class="subs-title" for="news-email">Suscribete ahora para obtener actualizaciones</label></h2>
                 <div class="subscription-info text-center">
-                    <form class="subscribe_form" action="#" method="post">
+                    <form class="subscribe_form" action="subscription/add.php" method="post">
+                        <div id="sendsubscription">¡Gracias por suscribirte! Pronto te llegarán increíbles noticias</div>
+                        <div id="errorsubscription"></div>
                         <div class="col-md-8 col-sm-9 col-xs-8 subscribe-input">
-                            <input required placeholder="Escribe tu email..." class="email" id="news-email" name="news-email" type="email" >
+                            <input required placeholder="Escribe tu email..." class="email" id="news-email" name="news-email" type="email" maxlength="50"  data-msg="Por favor ingresa un email válido" data-lengthmsg="Por favor ingresa menos de 50 caracteres" >
+                            <div class="news-validation"></div>
                         </div>
                         <div class="col-md-4 col-sm-3 col-xs-4 subscribe-submit">
                             <input class="subscribe-button subscribe " name="email" value="Enviar" type="submit">
@@ -161,5 +164,6 @@
     <script src="js/wow.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="contactform/contactform.js"></script>
+    <script src="subscription/subscription.js"></script>
 </body>
 </html>

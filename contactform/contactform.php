@@ -8,7 +8,7 @@
 require_once ('../connection/database.php');
 /***************** Configuration *****************/
 
-$contactEmailTo = 'info@nubeliqudia.com';
+$contactEmailTo = 'info@nubeliquida.com';
 $contactEmailFrom = 'contacto@nubeliquida.com';
 $ccEmail = 'hermes.garcia@nubeliquida.com';
 $ccEmail2 = 'davidgarcia@nubeliquida.com';
