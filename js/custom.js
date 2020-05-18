@@ -1,4 +1,28 @@
 (function ($) {
+    let preloader = $('#preloader');
+    let backTop = $('.back-to-top');
+    $(window).on('load', function () {
+        if (preloader.length) {
+            preloader.delay(100).fadeOut('slow', function () {
+                $(this).remove();
+            });
+        }
+    });
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            backTop.fadeIn('slow');
+        } else {
+            backTop.fadeOut('slow');
+        }
+    });
+    backTop.click(function(){
+        $('html, body').animate(
+            {scrollTop : 0},
+            800
+        );
+        return false;
+    });
 
     let wow = new WOW( {
         animateClass: 'animated',
