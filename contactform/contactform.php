@@ -5,7 +5,7 @@
 	Hermes Garcia
 	hgarciamanzanarez@gmail.com
 */
-
+require_once ('../connection/database.php');
 /***************** Configuration *****************/
 
 $contactEmailTo = 'info@nubeliqudia.com';
@@ -25,6 +25,11 @@ $contactErrorSubject = 'El asunto es muy corto o muy largo';
 $contactErrorMessage = 'Tu mensaje es muy corto, escribe un poco más para nosotros';
 
 /********** Send Script ***********/
+$tz = 'America/Mexico_City';
+$timestamp = time();
+$dt = new DateTime("now", new DateTimeZone($tz));
+$dt->setTimestamp($timestamp);
+$date = $dt->format('Y-m-d H:i:s');
 
 if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
 	die('Lo sentimos, la petición debe ser tipo Ajax POST');
@@ -76,8 +81,22 @@ if(isset($_POST)) {
 	$sendemail = mail($contactEmailTo, $subjectTitle . ' ' . $subject, $message_content, $headers);
 
 	if( $sendemail ) {
-		echo 'OK';
+		if(!connect($connection)){
+			echo "OK";
+		}else{
+			$query = "INSERT INTO sent_contact_emails (email, time, name, subject, message, status) 
+			 VALUES ('". $email."', '" . $date . "', '" . $name . "', '" . $subject ."' ,'" . $message . "', true)";
+			$result = mysqli_query($connection, $query) or die ("Algo ha salido mal");
+			echo "OK";
+		}
 	} else {
-		echo 'El email no puedo ser enviado, intentálo de nuevo.';
+		if(!connect($connection)){
+			echo 'El email no pudo ser enviado, intentálo de nuevo.';
+		}else{
+			$query = "INSERT INTO sent_contact_emails (email, time, name, subject, message, status) 
+			 VALUES ('". $email."', '" . $date . "', '" . $name . "', '" . $subject ."' ,'" . $message . "', false)";
+			$result = mysqli_query($connection, $query) or die ("Algo ha salido mal");
+			echo 'El email no pudo ser enviado, intentálo de nuevo.';
+		}
 	}
 }

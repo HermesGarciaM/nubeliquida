@@ -10,6 +10,7 @@ deployment:
     - /bin/cp page-503.html $DEPLOYPATH
     - /bin/cp sitemap_index.xml $DEPLOYPATH
     - /bin/cp -R /home3/nubeliquida/repositories/nubeliquida/repo/nube/contactform $DEPLOYPATH
+    - /bin/cp -R /home3/nubeliquida/repositories/nubeliquida/repo/nube/connection $DEPLOYPATH
     - /bin/cp -R /home3/nubeliquida/repositories/nubeliquida/repo/nube/css $DEPLOYPATH
     - /bin/cp -R /home3/nubeliquida/repositories/nubeliquida/repo/nube/fonts $DEPLOYPATH
     - /bin/cp -R /home3/nubeliquida/repositories/nubeliquida/repo/nube/img $DEPLOYPATH
